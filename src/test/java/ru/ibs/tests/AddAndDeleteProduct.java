@@ -6,10 +6,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import ru.ibs.dataProvider.AddProductDataProvider;
 import ru.ibs.jdbc.base.BaseTest;
+import ru.ibs.jdbcTemplate.base.BaseTestJdbc;
 import ru.ibs.product.Food;
 
 // Для проверки работы jdbcTemplate, изменить extends BaseTest -> extends BaseTestJdbc
-public class AddAndDeleteProduct extends BaseTest {
+public class AddAndDeleteProduct extends BaseTestJdbc {
     private final String NAME_TABLE = "Food";
 
     @DisplayName("Добавление товаров")

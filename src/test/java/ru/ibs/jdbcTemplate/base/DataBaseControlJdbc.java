@@ -3,13 +3,12 @@ import ru.ibs.product.Food;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import ru.ibs.utils.UtilsDB;
 
 public class DataBaseControlJdbc {
-    private JdbcTemplate jdbcTemplate = null;
+    private JdbcTemplate jdbcTemplate;
 
-    public void openConnection() {
-        jdbcTemplate = new JdbcTemplate(UtilsDB.getDataSource());
+    public DataBaseControlJdbc(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public void selectAllFrom(String nameTable) {

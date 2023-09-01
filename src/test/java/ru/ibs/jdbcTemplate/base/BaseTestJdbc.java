@@ -1,11 +1,8 @@
 package ru.ibs.jdbcTemplate.base;
-import org.junit.jupiter.api.BeforeAll;
+import org.springframework.jdbc.core.JdbcTemplate;
+import ru.ibs.utils.UtilsDB;
 
-public class BaseTestJdbc {
-    protected static DataBaseControlJdbc dataBaseControl = new DataBaseControlJdbc();
-
-    @BeforeAll
-    static void beforeAll() {
-        dataBaseControl.openConnection();
-    }
+public class BaseTestJdbc  {
+    protected static DataBaseControlJdbc dataBaseControl =
+            new DataBaseControlJdbc(new JdbcTemplate(UtilsDB.getDataSourceHikari()));
 }
